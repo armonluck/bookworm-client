@@ -1,8 +1,15 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { io } from 'socket.io-client';
 import Login from './components/Login/Login';
 import './App.scss';
 
 function App() {
+  const socket = io.connect('http://localhost:7070');
+
+  // socket.on('connect', () => {
+  //     displayMessage(`You connected with id: ${socket.id}`);
+  // })
+
   return (
     <BrowserRouter>
       <div>
