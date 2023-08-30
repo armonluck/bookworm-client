@@ -18,6 +18,7 @@ function MessagesPage({ socket, username, room }) {
 
             await socket.emit("send_message", messageData);
             setMessageArray((prevArray) => [...prevArray, messageData]);
+            setCurrentMessage("");
         }
     };
 
@@ -30,22 +31,34 @@ function MessagesPage({ socket, username, room }) {
     return (
         <div className='messages-container'>
             <div className='header'>
-
+                <p>Book Discussion In Progress</p>
             </div>
 
             <div className='main'>
                 {messageArray?.map((messageContent) => (
-                    <h1>{messageContent.message}</h1>
+                    <div id={username === messageContent.author ? "self" : "other"}>
+                        <div className='message__content'>
+                            <p>{messageContent.message}</p>
+                        </div>
+                        <div className='message__meta'>
+                            <p>{messageContent.time}</p>
+                            <p>{messageContent.author}</p>
+                        </div>
+                    </div>
                 ))}
             </div>
 
             <div className='footer'>
                 <input
                     type="text"
+                    value={currentMessage}
                     placeholder="Message..."
                     name="message"
                     onChange={(event) => {
                         setCurrentMessage(event.target.value);
+                    }}
+                    onKeyDown={(event) => {
+                        event.key === "Enter" && sendMessage();
                     }} />
                 <button onClick={sendMessage}>
                     Send
