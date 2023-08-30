@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import images from '../../components/Images/Images';
 import './MessagesPage.scss';
 
 function MessagesPage({ socket, username, room }) {
 
     const [currentMessage, setCurrentMessage] = useState("");
+    const [messageArray, setMessageArray] = useState([]);
 
     const sendMessage = async () => {
         if (currentMessage !== "") {
@@ -16,17 +17,28 @@ function MessagesPage({ socket, username, room }) {
             };
 
             await socket.emit("send_message", messageData);
+            setMessageArray((prevArray) => [...prevArray, messageData]);
         }
     };
 
+    useEffect(() => {
+        socket.on("receive_message", (data) => {
+            setMessageArray((prevArray) => [...prevArray, data]);
+        });
+    }, [socket]);
+
     return (
-        <div>
+        <div className='messages-container'>
             <div className='header'>
 
             </div>
-            <div className='main'>
 
+            <div className='main'>
+                {messageArray?.map((messageContent) => (
+                    <h1>{messageContent.message}</h1>
+                ))}
             </div>
+
             <div className='footer'>
                 <input
                     type="text"
