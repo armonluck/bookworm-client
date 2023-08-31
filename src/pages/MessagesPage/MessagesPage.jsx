@@ -4,18 +4,21 @@ import './MessagesPage.scss';
 
 function MessagesPage({ socket, username, room }) {
 
+    // State variables to define current message info and the message list or array
     const [currentMessage, setCurrentMessage] = useState("");
     const [messageArray, setMessageArray] = useState([]);
 
+    // Async fx to handle sending a message
     const sendMessage = async () => {
         if (currentMessage !== "") {
             const messageData = {
                 room: room,
-                author: username,
+                username: username,
                 message: currentMessage,
                 time: new Date(Date.now()).toLocaleTimeString()
             };
 
+            // Sends messageData to websocket, updates the array, and clears out the input values
             await socket.emit("send_message", messageData);
             setMessageArray((prevArray) => [...prevArray, messageData]);
             setCurrentMessage("");
@@ -36,6 +39,7 @@ function MessagesPage({ socket, username, room }) {
 
             <div className='main'>
                 {messageArray?.map((messageContent) => (
+                    //ternary operator to change id for styling
                     <div id={username === messageContent.author ? "self" : "other"}>
                         <div className='message__content'>
                             <p>{messageContent.message}</p>
@@ -57,6 +61,7 @@ function MessagesPage({ socket, username, room }) {
                     onChange={(event) => {
                         setCurrentMessage(event.target.value);
                     }}
+                    // Call fx using "Enter" key or Btn click below
                     onKeyDown={(event) => {
                         event.key === "Enter" && sendMessage();
                     }} />

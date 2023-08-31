@@ -6,13 +6,16 @@ import Login from './components/Login/Login';
 import MessagesPage from './pages/MessagesPage/MessagesPage';
 import './App.scss';
 
+// socket variable shows url for the backend server
 const socket = io.connect('http://localhost:7070');
 
 function App() {
 
+  // State variables to define username and room inputs
   const [username, setUsername] = useState("");
   const [room, setRoom] = useState("");
 
+  // Fx connects users who join the same room for a chat
   const handleJoinRoom = () => {
     if (username !== "" && room !== "") {
       socket.emit("join_room", room)
@@ -29,7 +32,7 @@ function App() {
         <input
           type="text"
           placeholder="Add Your Name..."
-          name="name"
+          name="username"
           onChange={(event) => {
             setUsername(event.target.value);
           }} />
