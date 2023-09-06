@@ -1,0 +1,23 @@
+@use '../../styles/fonts' as *;
+@use '../../styles/mixins' as *;
+@use '../../styles/variables' as *;
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $header-footer;
+    min-height: 50px;
+
+    &__text {
+        color: $white;
+        font-size: 0.8rem;
+        font-weight: 700;
+        line-height: 1rem;
+
+        @include tablet {
+            font-size: 1rem;
+            line-height: 18px;
+        }
+    }
+}

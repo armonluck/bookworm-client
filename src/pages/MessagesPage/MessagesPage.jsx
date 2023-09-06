@@ -33,28 +33,29 @@ function MessagesPage({ socket, username, room }) {
 
     return (
         <div className='messages-container'>
-            <div className='header'>
-                <p>Book Discussion In Progress</p>
+            <div className='messages-header'>
+                <p className='messages-header__title'>Book Discussion In Progress</p>
             </div>
 
-            <div className='main'>
+            <div className='messages-main'>
                 {messageArray?.map((messageContent) => (
                     //ternary operator to change id for styling
-                    <div id={username === messageContent.author ? "self" : "other"}>
-                        <div className='message__content'>
+                    <div className='messages-main__container' id={username === messageContent.username ? "self" : "other"}>
+                        <div className='messages-main__content'>
                             <p>{messageContent.message}</p>
                         </div>
-                        <div className='message__meta'>
-                            <p>{messageContent.time}</p>
+                        <div className='messages-main__meta'>
                             <p>{messageContent.username}</p>
+                            <p>{messageContent.time}</p>
                         </div>
                     </div>
                 ))}
             </div>
 
-            <div className='footer'>
+            <div className='messages-footer'>
                 <input
-                    type="text"
+                    className='messages-footer__input'
+                    type='text'
                     value={currentMessage}
                     placeholder="Message..."
                     name="message"
@@ -65,12 +66,11 @@ function MessagesPage({ socket, username, room }) {
                     onKeyDown={(event) => {
                         event.key === "Enter" && sendMessage();
                     }} />
-                <button onClick={sendMessage}>
+                <button className='messages-footer__btn' onClick={sendMessage}>
                     Send
-                    <img src={images.Send} alt="Send SVG" />
+                    <img className='messages-footer__svg' src={images.Send} alt="Send SVG" />
                 </button>
             </div>
-
         </div>
     )
 }

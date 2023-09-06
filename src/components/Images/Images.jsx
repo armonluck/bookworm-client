@@ -17,6 +17,7 @@ import Send from '../../assets/icons/send-24px.svg';
 import Sort from '../../assets/icons/sort-24px.svg';
 import Star from '../../assets/icons/star-24px.svg';
 import Bookworm from '../../assets/logos/bookworm-logo.png';
+import BookwormTwo from '../../assets/logos/bookworm-logo-2.png';
 
 const images = {
     Add,
@@ -37,7 +38,8 @@ const images = {
     Send,
     Sort,
     Star,
-    Bookworm
+    Bookworm, 
+    BookwormTwo
 }
 
 export default images;
