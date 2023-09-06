@@ -3,52 +3,37 @@ $tablet-width: 768px;
 $desktop-width: 1280px;
 
 // Site Primary Colors
-$instock-black: #13182c;
-$primary-text: $instock-black;
+$bookworm-black: #0C161D;
+$primary-text: $bookworm-black;
 
-$instock-indigo: #2e66e5;
-$cancel-btn-hover: $instock-indigo;
-$searchfield-border-active: $instock-indigo;
+$bookworm-coral: #E68860;
+$header-footer: $bookworm-coral;
 
-$white: #ffffff;
-$searchfield-bg-primary: $white;
+$white: #FFFFFF;
+$primary-background: $white;
 
-// Site secondary colors
-$slate: #5c667e;
-$placeholder-text: $slate;
-$table-column-header-text: $slate;
+// Site Secondary Colors
+$bookworm-gray: #7D869C;
+$placeholder-text: $bookworm-gray;
 
-$cloud: #bdc5d5;
-$table-sorting-icon: $cloud;
-$navlink-primary: $cloud;
-$searchfield-border-inactive: $cloud;
-$cancel-btn-primary: $cloud;
+$bookworm-pink: #FBCDCB;
+$nav-primary: $bookworm-pink;
 
+// Site Background Colors
+$charcoal: #454E5D;
+$btn-hover: $charcoal;
 
-// Site background colors
-$graphite: #232940;
-$cta-hover-bg: $graphite;
-$header-bg: $graphite;
-$delete-btn-hover: $graphite;
+// Messaging & Chat Colors
+$bookworm-blue: #0095FF;
+$self-msg: $bookworm-blue;
+$bookworm-jade: #11A777;
+$other-msg: $bookworm-jade;
 
-$light-grey: #f7f8f9;
-$primary-bg: $light-grey;
-$table-column-header-bg: $light-grey;
-$cta-bg: $light-grey;
-$searchfield-bg-hover: $light-grey;
-
+// Modal
 $modal-overlay-bg: rgba($color: #13182c, $alpha: 0.7);
-
-// Site supporting colors
-$instock-green: #158463;
-$label-in-stock: $instock-green;
-
-$instock-red: #c94515;
-$label-out-of-stock: $instock-red;
-$delete-btn-primary: $instock-red;
 
 // Padding/margin
 $desktop-base: 130px;
 
-//Borders
-$thin-border: $cloud 1px solid;
+// Borders
+$thin-border: $bookworm-gray 1px solid;
