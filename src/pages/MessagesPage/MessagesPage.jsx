@@ -46,7 +46,7 @@ function MessagesPage({ socket, username, room }) {
                         </div>
                         <div className='message__meta'>
                             <p>{messageContent.time}</p>
-                            <p>{messageContent.author}</p>
+                            <p>{messageContent.username}</p>
                         </div>
                     </div>
                 ))}
