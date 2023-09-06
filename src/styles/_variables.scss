@@ -1,0 +1,45 @@
+//Screen Sizes
+$tablet-width: 768px;
+$desktop-width: 1280px;
+
+// Site Primary Colors
+$bookworm-black: #0C161D;
+$primary-text: $bookworm-black;
+
+$bookworm-coral: #E68860;
+$header-footer: $bookworm-coral;
+
+$white: #FFFFFF;
+$primary-background: $white;
+$msg-text: $white;
+$contrast-text: $white;
+
+// Site Secondary Colors
+$bookworm-gray: #7D869C;
+$placeholder-text: $bookworm-gray;
+$btn: $bookworm-gray;
+$dividers: $bookworm-gray;
+
+$bookworm-pink: #FBCDCB;
+
+// Site Background Colors
+$charcoal: #454E5D;
+$btn-hover: $charcoal;
+
+$flame: #D45721;
+$nav-hover-bg: $flame;
+
+// Messaging & Chat Colors
+$bookworm-blue: #0095FF;
+$self-msg: $bookworm-blue;
+$bookworm-jade: #11A777;
+$other-msg: $bookworm-jade;
+
+// Modal
+$modal-overlay-bg: rgba($color: #0C161D, $alpha: 0.7);
+
+// Padding/margin
+$desktop-base: 130px;
+
+// Borders
+$thin-border: $bookworm-gray 1px solid;

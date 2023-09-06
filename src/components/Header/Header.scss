@@ -1,0 +1,98 @@
+@use '../../styles/fonts' as *;
+@use '../../styles/mixins' as *;
+@use '../../styles/variables' as *;
+
+.header {
+    background-color: $header-footer;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include tablet {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    &-logo {
+        display: flex;
+
+        @include tablet {
+            max-width: 30%;
+        }
+
+        &__link {
+            display: block;
+            width: 9rem;
+            height: auto;
+        }
+
+        &__img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &-nav {
+        padding: 1.5rem 1rem;
+        display: flex;
+        width: 100%;
+
+        @include tablet {
+            padding: 0;
+            width: 70%;
+        }
+
+        &__list {
+            list-style-type: none;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__list-item {
+            width: 48%;
+            display: flex;
+    
+            @include tablet {
+                width: 50%;
+            }
+        }
+
+        &__link {
+            width: 100%;
+            padding: 0.5rem 0;
+            border-radius: 20px;
+            color: $contrast-text;
+            font-size: 0.8rem;
+            line-height: 1.25rem;
+            text-align: center;
+            text-decoration: none;
+    
+            @include tablet {
+                font-size: 1rem;
+                font-weight: 700;
+                line-height: 1.375rem;
+            }
+    
+            &:hover {
+                text-decoration: 2px solid underline $white;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.active {
+    background-color: $nav-hover-bg;
+    color: $white;
+}
