@@ -17,7 +17,7 @@ function Header() {
                             <NavLink to="/" className="header-nav__link">Home</NavLink>
                         </li>
                         <li className="header-nav__list-item">
-                            <NavLink to="/search" className="header-nav__link">Search Books</NavLink>
+                            <NavLink to="/browse" className="header-nav__link">Browse Books</NavLink>
                         </li>
                         <li className="header-nav__list-item">
                             <NavLink to="/messages" className="header-nav__link">Message</NavLink>
@@ -29,7 +29,7 @@ function Header() {
                             <NavLink to="/contact" className="header-nav__link">Contact Us</NavLink>
                         </li>
                         <li className="header-nav__list-item">
-                            <NavLink to="/login" className="header-nav__link">Sign In</NavLink>
+                            <NavLink to="/login" className="header-nav__link">Login</NavLink>
                         </li>
                     </ul>
                 </nav>

@@ -8,7 +8,7 @@ function MessagesPage({ socket, username, room }) {
     const [currentMessage, setCurrentMessage] = useState("");
     const [messageArray, setMessageArray] = useState([]);
 
-    // Async fx to handle sending a message
+    // Async function to handle sending a message
     const sendMessage = async () => {
         if (currentMessage !== "") {
             const messageData = {

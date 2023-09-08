@@ -54,24 +54,15 @@ function App() {
           onClick={handleJoinRoom}>Join A Room</button>
       </div>
 
-      {/* <div>
-        <MessagesPage
-          socket={socket}
-          username={username}
-          room={room}
-        />
-      </div> */}
-
       <Routes>
         <Route path='/' element='' />
         <Route path='/home' element='' />
-        <Route path='/search' element={<BrowsePage />} />
+        <Route path='/browse' element={<BrowsePage />} />
+        <Route path='/messages' element={<MessagesPage socket={socket} username={username} room={room} />} />
         <Route path='/about' element='' />
         <Route path='/contact' element='' />
         <Route path='/login' element={<Login />} />
         <Route path='/profile' element='' />
-        <Route path='/messages' element={<MessagesPage socket={socket} username={username} room={room} />} />
-        <Route path='/browse' element='' />
       </Routes>
 
       <Footer />
