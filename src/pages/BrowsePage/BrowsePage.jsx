@@ -4,28 +4,31 @@ import BookCard from '../../components/BookCard/BookCard';
 import images from '../../components/Images/Images';
 
 function BrowsePage() {
+
+    // URL and secret API key to access Google Book API search results
     const apiKey = process.env.REACT_APP_API_KEY;
     const testURL = "https://www.googleapis.com/books/v1/volumes?q=";
+    const pageLimit = "&maxResults=20";
 
     // useState variables
     const [bookData, setBookData] = useState([]);
     const [search, setSearch] = useState("");
 
-    // GET all data and set state
-    useEffect(() => {
-        axios
-            .get("https://www.googleapis.com/books/v1/volumes?q=fantasy+subject:romance")
-            .then((response) => {
-                setBookData(response.data.items);
-            })
-            .catch((err) => console.log(err));
-    }, [])
+    // // GET all data and set state
+    // useEffect(() => {
+    //     axios
+    //         .get("https://www.googleapis.com/books/v1/volumes?q=fantasy+subject:romance")
+    //         .then((response) => {
+    //             setBookData(response.data.items);
+    //         })
+    //         .catch((err) => console.log(err));
+    // }, [])
 
     // searchBook function
     const searchBook = (e) => {
         if (e.key === "Enter") {
             axios
-                .get(testURL + search + apiKey)
+                .get(testURL + search + apiKey + pageLimit)
                 .then((response) => {
                     setBookData(response.data.items);
                 })
@@ -46,15 +49,14 @@ function BrowsePage() {
     }
 
     return (
-        < >
-            <div>
+        <>
+            <div className='browse__header'>
                 <h1>{bookwormPhrases.phrase6}</h1>
-            </div>
-            <div>
-                <div className='browse'>
+
+                <div className='browse-search'>
                     <label>Browse Books</label>
                     <input
-                        className=''
+                        className='browse-search__input'
                         type="text"
                         placeholder='Search by title, author, edition...'
                         value={search}
@@ -65,12 +67,9 @@ function BrowsePage() {
                         <img src={images.Search} alt="Search icon SVG" />
                     </button>
                 </div>
-
-                <ul>
-                    <li>
-                        <BookCard bookData={bookData} />
-                    </li>
-                </ul>
+            </div>
+            <div className='browse__results'>
+                <BookCard bookData={bookData} />
             </div>
         </>
     )
