@@ -7,6 +7,8 @@ import Footer from './components/Footer/Footer';
 import Login from './components/Login/Login';
 import MessagesPage from './pages/MessagesPage/MessagesPage';
 import BrowsePage from './pages/BrowsePage/BrowsePage';
+import AboutPage from './pages/AboutPage/AboutPage';
+import HomePage from './pages/HomePage/HomePage';
 import './App.scss';
 
 // socket variable shows url for the backend server
@@ -54,24 +56,15 @@ function App() {
           onClick={handleJoinRoom}>Join A Room</button>
       </div>
 
-      {/* <div>
-        <MessagesPage
-          socket={socket}
-          username={username}
-          room={room}
-        />
-      </div> */}
-
       <Routes>
-        <Route path='/' element='' />
-        <Route path='/home' element='' />
-        <Route path='/search' element={<BrowsePage />} />
-        <Route path='/about' element='' />
+        <Route path='/' element={<HomePage />} />
+        <Route path='/home' element={<HomePage />} />
+        <Route path='/browse' element={<BrowsePage />} />
+        <Route path='/messages' element={<MessagesPage socket={socket} username={username} room={room} />} />
+        <Route path='/about' element={<AboutPage />} />
         <Route path='/contact' element='' />
         <Route path='/login' element={<Login />} />
         <Route path='/profile' element='' />
-        <Route path='/messages' element={<MessagesPage socket={socket} username={username} room={room} />} />
-        <Route path='/browse' element='' />
       </Routes>
 
       <Footer />

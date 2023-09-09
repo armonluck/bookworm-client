@@ -8,7 +8,7 @@ function MessagesPage({ socket, username, room }) {
     const [currentMessage, setCurrentMessage] = useState("");
     const [messageArray, setMessageArray] = useState([]);
 
-    // Async fx to handle sending a message
+    // Async function to handle sending a message
     const sendMessage = async () => {
         if (currentMessage !== "") {
             const messageData = {
@@ -68,7 +68,7 @@ function MessagesPage({ socket, username, room }) {
                     }} />
                 <button className='messages-footer__btn' onClick={sendMessage}>
                     Send
-                    <img className='messages-footer__svg' src={images.Send} alt="Send SVG" />
+                    <img className='messages-footer__svg' src={images.Send} alt="Send icon SVG" />
                 </button>
             </div>
         </div>
