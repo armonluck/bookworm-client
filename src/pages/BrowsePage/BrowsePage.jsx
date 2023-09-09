@@ -26,7 +26,7 @@ function BrowsePage() {
 
     // searchBook function
     const searchBook = (e) => {
-        if (e.key === "Enter") {
+        if (search !== "") {
             axios
                 .get(testURL + search + apiKey + pageLimit)
                 .then((response) => {
@@ -61,9 +61,11 @@ function BrowsePage() {
                         placeholder='Search by title, author, edition...'
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
-                        onKeyDown={searchBook}
+                        onKeyDown={(event) => {
+                            event.key === "Enter" && searchBook();
+                        }}
                     />
-                    <button>
+                    <button className='browse-search__btn' onClick={searchBook}>
                         <img src={images.Search} alt="Search icon SVG" />
                     </button>
                 </div>

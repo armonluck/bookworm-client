@@ -18,7 +18,6 @@ function BookCard({ bookData }) {
                                 <div>
                                     <h3>{book.volumeInfo.title}</h3>
                                     <p>{book.volumeInfo.authors}</p>
-                                    <p>&#8377; 1000</p>
                                 </div>
                             </div>
                         )
