@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import BookCard from '../../components/BookCard/BookCard';
 import images from '../../components/Images/Images';
@@ -25,6 +25,7 @@ function BrowsePage() {
     // }, [])
 
     // searchBook function
+
     const searchBook = (e) => {
         if (search !== "") {
             axios

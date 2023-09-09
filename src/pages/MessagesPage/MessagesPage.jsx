@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
-import { io } from 'socket.io-client';
 import Messages from '../../components/Messages/Messages';
 import './MessagesPage.scss';
 
-// socket variable shows url for the backend server
-const socket = io.connect('http://localhost:7070');
-
-function MessagesPage() {
+function MessagesPage({ socket }) {
 
     // State variables to define username and room inputs
     const [username, setUsername] = useState("");
@@ -18,33 +14,6 @@ function MessagesPage() {
             socket.emit("join_room", room)
         }
     };
-
-    // // State variables to define current message info and the message list or array
-    // const [currentMessage, setCurrentMessage] = useState("");
-    // const [messageArray, setMessageArray] = useState([]);
-
-    // // Async function to handle sending a message
-    // const sendMessage = async () => {
-    //     if (currentMessage !== "") {
-    //         const messageData = {
-    //             room: room,
-    //             username: username,
-    //             message: currentMessage,
-    //             time: new Date(Date.now()).toLocaleTimeString()
-    //         };
-
-    //         // Sends messageData to websocket, updates the array, and clears out the input values
-    //         await socket.emit("send_message", messageData);
-    //         setMessageArray((prevArray) => [...prevArray, messageData]);
-    //         setCurrentMessage("");
-    //     }
-    // };
-
-    // useEffect(() => {
-    //     socket.on("receive_message", (data) => {
-    //         setMessageArray((prevArray) => [...prevArray, data]);
-    //     });
-    // }, [socket]);
 
     return (
         <>
@@ -62,7 +31,7 @@ function MessagesPage() {
                 <input
                     className='chat-form__input'
                     type="text"
-                    placeholder="Room ID..."
+                    placeholder="Enter A Room ID..."
                     name="room"
                     onChange={(event) => {
                         setRoom(event.target.value);

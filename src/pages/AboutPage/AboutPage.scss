@@ -2,13 +2,16 @@
 @use '../../styles/mixins' as *;
 @use '../../styles/variables' as *;
 
-* {
+.about {
     margin-top: 250px;
-    display: flex;
-    flex-direction: column;
-    padding: 0.5rem;
+    font-size: 2rem;
+    font-weight: 700;
     
     @include tablet {
         margin-top: 150px;
+    }
+
+    &__bio {
+
     }
 }
