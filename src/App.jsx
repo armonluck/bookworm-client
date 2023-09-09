@@ -6,9 +6,9 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Login from './components/Login/Login';
 import MessagesPage from './pages/MessagesPage/MessagesPage';
-import BrowsePage from './pages/BrowsePage/BrowsePage';
 import AboutPage from './pages/AboutPage/AboutPage';
 import HomePage from './pages/HomePage/HomePage';
+import BrowsePage from './pages/BrowsePage/BrowsePage';
 import './App.scss';
 
 // socket variable shows url for the backend server

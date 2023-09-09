@@ -2,13 +2,41 @@
 @use '../../styles/mixins' as *;
 @use '../../styles/variables' as *;
 
-// * {
-//     margin-top: 250px;
-//     display: flex;
-//     flex-direction: column;
-//     padding: 0.5rem;
-    
-//     @include tablet {
-//         margin-top: 150px;
-//     }
-// }
+.browse-header {
+    margin-top: 250px;
+
+    @include tablet {
+        margin-top: 150px;
+    }
+}
+
+.browse-search {
+    border: 1px solid $dividers;
+    display: flex;
+    align-items: center;
+
+    &__label {
+        font-size: 1rem;
+    }
+
+    &__input {
+        min-width: 300px;
+        border: 0;
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+
+    &__btn {
+        height: 100%;
+        border: 0;
+        padding: 0.5rem;
+    }
+
+    &__btn:hover {
+        background: $bookworm-pink;
+    }
+}
+
+.browse-results {
+    width: 30%;
+}

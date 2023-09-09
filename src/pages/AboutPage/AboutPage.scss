@@ -4,8 +4,9 @@
 
 .about {
     margin-top: 250px;
-    font-size: 2rem;
-    font-weight: 700;
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding: 1rem;
     
     @include tablet {
         margin-top: 150px;

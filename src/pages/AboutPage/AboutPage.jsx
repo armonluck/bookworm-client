@@ -1,10 +1,11 @@
-import React from 'react'
+import React from 'react';
+import './AboutPage.scss'
 
 function AboutPage() {
   return (
     <div className='about'>
       <p className='about__bio'>
-        Full-Stack Software Developer looking for my next role. I've always had a scientific curiosity for how things work which led me to study health and biology. However, I have had an increasing interest in applying this curiosity to tech and providing efficient solutions to technical problems. Looking to develop my career as well as build a strong network of passionate and caring individuals.
+        My name is Armon Luckenbach, the humble developer of the app before you. Websites and applications that appeal to the reading community have failed to bring a social connection between readers. Although comments, reviews, and occasional discussions under individual book titles are possible the user cannot have a private discussion/chat in app and have to navigate to another platform to properly express themselves. This is where bookworm steps in to bridge that gap and fulfill the need to jump into a heated discussion with friends after getting to the climax of a sci-fi novel.
       </p>
     </div>
   )

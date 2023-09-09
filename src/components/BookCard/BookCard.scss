@@ -1,3 +1,15 @@
 @use '../../styles/fonts' as *;
 @use '../../styles/mixins' as *;
 @use '../../styles/variables' as *;
+
+.bookcard {
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include tablet {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}

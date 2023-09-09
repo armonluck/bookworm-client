@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import BookCard from '../../components/BookCard/BookCard';
 import images from '../../components/Images/Images';
+import './BrowsePage.scss';
 
 function BrowsePage() {
 
@@ -51,11 +52,11 @@ function BrowsePage() {
 
     return (
         <>
-            <div className='browse__header'>
+            <div className='browse-header'>
                 <h1>{bookwormPhrases.phrase6}</h1>
 
                 <div className='browse-search'>
-                    <label>Browse Books</label>
+                    <label className='browse-search__label'>Browse Books</label>
                     <input
                         className='browse-search__input'
                         type="text"
@@ -71,7 +72,7 @@ function BrowsePage() {
                     </button>
                 </div>
             </div>
-            <div className='browse__results'>
+            <div className='browse-results'>
                 <BookCard bookData={bookData} />
             </div>
         </>

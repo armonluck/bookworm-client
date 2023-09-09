@@ -2,13 +2,10 @@
 @use '../../styles/mixins' as *;
 @use '../../styles/variables' as *;
 
-// * {
-//     margin-top: 250px;
-//     display: flex;
-//     flex-direction: column;
-//     padding: 0.5rem;
+.home {
+    margin-top: 250px;
     
-//     @include tablet {
-//         margin-top: 150px;
-//     }
-// }
+    @include tablet {
+        margin-top: 150px;
+    }
+}
