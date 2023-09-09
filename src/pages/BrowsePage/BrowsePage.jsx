@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import BookCard from '../../components/BookCard/BookCard';
 import images from '../../components/Images/Images';
 
 function BrowsePage() {
-    const apiKey = "&key=AIzaSyDE01HuoBovDU2gw0qIgzVfoQlbN582Ys4";
+    const apiKey = process.env.REACT_APP_API_KEY;
     const testURL = "https://www.googleapis.com/books/v1/volumes?q=";
 
     // useState variables
@@ -61,14 +62,14 @@ function BrowsePage() {
                         onKeyDown={searchBook}
                     />
                     <button>
-                        <img src={images.Search} alt="" />
+                        <img src={images.Search} alt="Search icon SVG" />
                     </button>
                 </div>
 
                 <ul>
-                    {bookData.products?.map((book) => (
-                        <li>{book.volumeInfo.title}</li>
-                    ))}
+                    <li>
+                        <BookCard bookData={bookData} />
+                    </li>
                 </ul>
             </div>
         </>
