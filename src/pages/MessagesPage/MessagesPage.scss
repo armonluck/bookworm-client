@@ -1,0 +1,41 @@
+@use '../../styles/fonts' as *;
+@use '../../styles/mixins' as *;
+@use '../../styles/variables' as *;
+
+.chat-form {
+    margin-top: 232px;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+
+    @include tablet {
+        margin-top: 148px;
+    }
+
+    &__subtitle {
+        font-size: 1.5rem;
+    }
+
+    &__input {
+        border: 1px solid $bookworm-gray;
+        border-radius: 4px;
+        width: 200px;
+        height: 40px;
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+
+    &__btn {
+        background: $btn;
+        border-radius: 4px;
+        width: 200px;
+        height: 40px;
+        border: none;
+        font-size: 1rem;
+        color: $white;
+    }
+
+    &__btn:hover {
+        background: $btn-hover;
+    }
+}

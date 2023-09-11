@@ -1,0 +1,21 @@
+@use '../../styles/fonts' as *;
+@use '../../styles/mixins' as *;
+@use '../../styles/variables' as *;
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $header-footer;
+    min-height: 50px;
+
+    &__text {
+        color: $white;
+        padding: 0 0.5rem;
+        @include typekit(labels-links-btns, mobile);
+
+        @include tablet {
+            @include typekit(labels-links-btns, tablet-desktop);
+        }
+    }
+}

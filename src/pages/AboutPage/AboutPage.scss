@@ -1,0 +1,74 @@
+@use '../../styles/fonts' as *;
+@use '../../styles/mixins' as *;
+@use '../../styles/variables' as *;
+
+.about {
+    margin-top: 232px;
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding: 1rem;
+    
+    @include tablet {
+        margin-top: 148px;
+    }
+
+    &__header {
+        @include typekit(page-header, mobile);
+
+        @include tablet {
+            @include typekit(page-header, tablet-desktop);
+        }
+    }
+    
+    &__subheader {
+        @include typekit(subheader, mobile);
+
+        @include tablet {
+            @include typekit(subheader, tablet-desktop);
+        }
+
+        &--title {
+            color: $bookworm-flame
+        }
+    }
+
+    &__text {
+        @include typekit(body-large, mobile);
+
+        @include tablet {
+            @include typekit(body-large, tablet-desktop);
+        }
+    }
+
+    &__link {
+        &--github {
+            height: 36px;
+            width: 36px;
+        }
+
+        &--github:hover {
+            transform: scale(0.9);
+        }
+    }
+}
+
+.about-who {
+    margin: 1rem 0;
+    padding: 0.5rem;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 2px rgba(179, 97, 30, 0.725);
+    border-radius: 20px;
+}
+
+.about-what {
+    margin: 1rem 0;
+    padding: 0.5rem;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    box-shadow: 0 2px 2px rgba(179, 97, 30, 0.725);
+    border-radius: 20px;
+}
