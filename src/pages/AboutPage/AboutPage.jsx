@@ -13,7 +13,7 @@ function AboutPage() {
       </p>
       </div>
 
-      <h2></h2>
+      <h2>What is Bookworm?</h2>
       <p>
         Reading doesn’t have to be a solo endeavor. Popular apps in the reading community have failed to bring a social connection between readers which is where bookworm steps in to bridge that gap
         </p>
