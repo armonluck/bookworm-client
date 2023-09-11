@@ -33,7 +33,7 @@ function BrowsePage() {
 
     const bookwormPhrases = {
         phrase1: "Worming Our Way Through Every Story",
-        phrase2: "Reading: The Ultimate Bookworm Workout",
+        phrase2: "Reading: The Ultimate Bookish Workout",
         phrase3: "Bookworms: Turning Pages, Not Turning Back!",
         phrase4: "In a World of Books, We're the Hungry Ones",
         phrase5: "Bookworms: Feasting on Knowledge Since Forever",
@@ -44,7 +44,7 @@ function BrowsePage() {
     return (
         <>
             <div className='browse'>
-                <h1 className='browse__title'>{bookwormPhrases.phrase7}</h1>
+                <h1 className='browse__title'>{bookwormPhrases.phrase2}</h1>
 
                 <div className='browse-search'>
                     <label className='browse-search__label'>Browse Books</label>

@@ -8,6 +8,7 @@
     height: 400px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     background: linear-gradient(315deg, rgba(200, 196, 196, 0.2), rgba(46, 42, 42, 0.8)), url(../../assets/images/book-wall-unsplash.jpg);
     background-size: cover;
     background-position: center;
@@ -18,7 +19,7 @@
     }
 
     &__title {
-        padding: 0.5rem;
+        padding: 1rem;
         color: $contrast-text;
         @include typekit(page-header, mobile);
 
@@ -34,7 +35,7 @@
     align-items: center;
 
     &__label {
-        padding: 0.5rem;
+        padding: 1rem;
         color: $contrast-text;
         @include typekit(subheader, mobile);
 
