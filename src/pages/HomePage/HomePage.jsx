@@ -4,7 +4,7 @@ import './HomePage.scss';
 function HomePage() {
   return (
     <div className='home'>
-      <h1>Welcome home bookworms!</h1>
+      <h1 className='home__header'>Welcome home bookworms!</h1>
     </div>
   )
 }
