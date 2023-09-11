@@ -3,13 +3,13 @@
 @use '../../styles/variables' as *;
 
 .chat-form {
-    margin-top: 250px;
+    margin-top: 232px;
     display: flex;
     flex-direction: column;
     padding: 0.5rem;
 
     @include tablet {
-        margin-top: 150px;
+        margin-top: 148px;
     }
 
     &__subtitle {

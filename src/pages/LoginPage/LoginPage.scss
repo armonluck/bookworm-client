@@ -3,9 +3,9 @@
 @use '../../styles/variables' as *;
 
 .login {
-    margin-top: 250px;
+    margin-top: 232px;
     
     @include tablet {
-        margin-top: 150px;
+        margin-top: 148px;
     }
 }

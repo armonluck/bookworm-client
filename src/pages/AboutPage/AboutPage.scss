@@ -3,13 +3,13 @@
 @use '../../styles/variables' as *;
 
 .about {
-    margin-top: 250px;
+    margin-top: 232px;
     font-size: 1.5rem;
     font-weight: 400;
     padding: 1rem;
     
     @include tablet {
-        margin-top: 150px;
+        margin-top: 148px;
     }
 
     &__bio {

@@ -9,24 +9,15 @@ function BrowsePage() {
     // URL and secret API key to access Google Book API search results
     const apiKey = process.env.REACT_APP_API_KEY;
     const testURL = "https://www.googleapis.com/books/v1/volumes?q=";
-    const pageLimit = "&maxResults=20";
+    const pageLimit = "&maxResults=21";
 
     // useState variables
     const [bookData, setBookData] = useState([]);
     const [search, setSearch] = useState("");
 
-    // // GET all data and set state
-    // useEffect(() => {
-    //     axios
-    //         .get("https://www.googleapis.com/books/v1/volumes?q=fantasy+subject:romance")
-    //         .then((response) => {
-    //             setBookData(response.data.items);
-    //         })
-    //         .catch((err) => console.log(err));
-    // }, [])
 
     // searchBook function
-
+    // controls what bookData is pulled from Google API
     const searchBook = (e) => {
         if (search !== "") {
             axios
@@ -52,8 +43,8 @@ function BrowsePage() {
 
     return (
         <>
-            <div className='browse-header'>
-                <h1>{bookwormPhrases.phrase6}</h1>
+            <div className='browse'>
+                <h1 className='browse__title'>{bookwormPhrases.phrase7}</h1>
 
                 <div className='browse-search'>
                     <label className='browse-search__label'>Browse Books</label>
@@ -68,10 +59,11 @@ function BrowsePage() {
                         }}
                     />
                     <button className='browse-search__btn' onClick={searchBook}>
-                        <img src={images.Search} alt="Search icon SVG" />
+                        <img className='browse-search__svg' src={images.Search} alt="Search icon SVG" />
                     </button>
                 </div>
             </div>
+
             <div className='browse-results'>
                 <BookCard bookData={bookData} />
             </div>

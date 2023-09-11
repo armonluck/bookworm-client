@@ -5,7 +5,7 @@ function BookCard({ bookData }) {
     console.log(bookData);
 
     return (
-        <div>
+        <div className='bookcard-container'>
             {
                 bookData?.map((book) => {
                     const thumbnail = book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.smallThumbnail;
@@ -17,6 +17,7 @@ function BookCard({ bookData }) {
                                 <div className='bookcard-data'>
                                     <h3 className='bookcard-data__title'>{book.volumeInfo.title}</h3>
                                     <p className='bookcard-data__author'>{book.volumeInfo.authors}</p>
+                                    <p className='bookcard-data__pages'>Page Count: {book.volumeInfo.pageCount}</p>
                                 </div>
                             </div>
                         )
