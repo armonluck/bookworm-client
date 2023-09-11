@@ -1,77 +1,49 @@
-import React, { useEffect, useState } from 'react';
-import images from '../../components/Images/Images';
+import React, { useState } from 'react';
+import Messages from '../../components/Messages/Messages';
 import './MessagesPage.scss';
 
-function MessagesPage({ socket, username, room }) {
+function MessagesPage({ socket }) {
 
-    // State variables to define current message info and the message list or array
-    const [currentMessage, setCurrentMessage] = useState("");
-    const [messageArray, setMessageArray] = useState([]);
+    // State variables to define username and room inputs
+    const [username, setUsername] = useState("");
+    const [room, setRoom] = useState("");
 
-    // Async function to handle sending a message
-    const sendMessage = async () => {
-        if (currentMessage !== "") {
-            const messageData = {
-                room: room,
-                username: username,
-                message: currentMessage,
-                time: new Date(Date.now()).toLocaleTimeString()
-            };
-
-            // Sends messageData to websocket, updates the array, and clears out the input values
-            await socket.emit("send_message", messageData);
-            setMessageArray((prevArray) => [...prevArray, messageData]);
-            setCurrentMessage("");
+    // Fx connects users who join the same room for a chat
+    const handleJoinRoom = () => {
+        if (username !== "" && room !== "") {
+            socket.emit("join_room", room)
         }
     };
 
-    useEffect(() => {
-        socket.on("receive_message", (data) => {
-            setMessageArray((prevArray) => [...prevArray, data]);
-        });
-    }, [socket]);
-
     return (
-        <div className='messages-container'>
-            <div className='messages-header'>
-                <p className='messages-header__title'>Book Discussion In Progress</p>
-            </div>
-
-            <div className='messages-main'>
-                {messageArray?.map((messageContent) => (
-                    //ternary operator to change id for styling
-                    <div className='messages-main__container' id={username === messageContent.username ? "self" : "other"}>
-                        <div className='messages-main__content'>
-                            <p>{messageContent.message}</p>
-                        </div>
-                        <div className='messages-main__meta'>
-                            <p>{messageContent.username}</p>
-                            <p>{messageContent.time}</p>
-                        </div>
-                    </div>
-                ))}
-            </div>
-
-            <div className='messages-footer'>
+        <>
+            <div className='chat-form'>
+                <h3 className='chat-form__subtitle'>Name</h3>
                 <input
-                    className='messages-footer__input'
-                    type='text'
-                    value={currentMessage}
-                    placeholder="Message..."
-                    name="message"
+                    className='chat-form__input'
+                    type="text"
+                    placeholder="Add Your Name..."
+                    name="username"
                     onChange={(event) => {
-                        setCurrentMessage(event.target.value);
-                    }}
-                    // Call fx using "Enter" key or Btn click below
-                    onKeyDown={(event) => {
-                        event.key === "Enter" && sendMessage();
+                        setUsername(event.target.value);
                     }} />
-                <button className='messages-footer__btn' onClick={sendMessage}>
-                    Send
-                    <img className='messages-footer__svg' src={images.Send} alt="Send icon SVG" />
-                </button>
+                <h3 className='chat-form__subtitle'>Room</h3>
+                <input
+                    className='chat-form__input'
+                    type="text"
+                    placeholder="Enter A Room ID..."
+                    name="room"
+                    onChange={(event) => {
+                        setRoom(event.target.value);
+                    }} />
+                <br />
+                <button
+                    className='chat-form__btn'
+                    onClick={handleJoinRoom}>Join A Room</button>
             </div>
-        </div>
+
+            <Messages socket={socket} username={username} room={room} />
+        </>
     )
 }
 

@@ -1,6 +1,8 @@
 import { useRef, useState } from 'react';
 import axios from 'axios';
 import './Login.scss';
+
+// UUID Generator
 const { v4: uuidv4 } = require('uuid');
 
 function Login() {
@@ -38,25 +40,28 @@ function Login() {
     });
 
     return (
-        <div>
-            <h1>Login / Sign Up</h1>
-            <p>This is where you login and make a new account</p>
-            <br />
+        <div className='login'>
+            <div className='login-header'>
+                <h1 className='login-header__title'>Login</h1>
+                <p className='login-header__text'>
+                    Make an account and begin your reading adventure.
+                </p>
+            </div>
 
-            <form className="" ref={formRef} onSubmit={onSubmit}>
-                <section className="">
+            <form className="login-form" ref={formRef} onSubmit={onSubmit}>
+                <section className="login-form__fields">
                     <h3>User Name</h3>
-                    <input type="text" placeholder="User Name" name="user name" required onInvalid={(e) => handleOnInvalid(e.target)}></input>
+                    <input className='login-form__input' type="text" placeholder="User Name" name="user name" required onInvalid={(e) => handleOnInvalid(e.target)}></input>
                     <h3>Email</h3>
-                    <input type="text" placeholder="Email" name="user email" required onInvalid={(e) => handleOnInvalid(e.target)}></input>
+                    <input className='login-form__input' type="text" placeholder="Email" name="user email" required onInvalid={(e) => handleOnInvalid(e.target)}></input>
                     <h3>Password</h3>
-                    <input type='password' placeholder="Password" name="user password" required onInvalid={(e) => handleOnInvalid(e.target)}></input>
+                    <input className='login-form__input' type='password' placeholder="Password" name="user password" required onInvalid={(e) => handleOnInvalid(e.target)}></input>
                 </section>
-                <section className="">
-                    <button className="">
+                <section className="login-form__btn-box">
+                    <button className="login-form__btns">
                         Cancel
                     </button>
-                    <button type="submit" className="">
+                    <button className="login-form__btns" type="submit">
                         Sign Up
                     </button>
                 </section>

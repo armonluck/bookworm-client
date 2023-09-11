@@ -1,0 +1,116 @@
+@use '../../styles/fonts'as *;
+@use '../../styles/mixins' as *;
+@use '../../styles/variables' as *;
+
+.messages-container {
+    width: 350px;
+    height: 450px;
+    margin: 0.5rem;
+}
+
+.messages-header {
+    display: flex;
+    justify-content: center;
+    height: 45px;
+    background: $header-footer;
+
+    &__title {
+        color: $msg-text;
+        font-size: 1.2rem;
+        font-weight: 700;
+        line-height: 45px;
+    }
+}
+
+.messages-main {
+    height: calc(450px - (45px + 70px));
+    border: 1px solid $dividers;
+    background: $primary-background;
+    position: relative;
+
+    &__container {
+        width: 100%;
+        height: auto;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__container::-webkit-scrollbar {
+        display: none;
+    }
+
+    &__content {
+        width: auto;
+        height: auto;
+        min-height: 40px;
+        max-width: 200px;
+        border-radius: 4px;
+        color: $msg-text;
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+        overflow-wrap: break-word;
+        word-break: break-word;
+    }
+
+    &__meta {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.messages-footer {
+    height: 45px;
+    border: 1px solid $dividers;
+    display: flex;
+
+    &__input {
+        height: 100%;
+        flex: 80%;
+        border: 0;
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+
+    &__btn {
+        display: flex;
+        align-items: center;
+        flex: 20%;
+        height: 100%;
+        font-size: 1.2rem;
+        font-weight: 700;
+        border: 0;
+        padding: 0.5rem;
+    }
+
+    &__btn:hover {
+        background: $bookworm-pink;
+    }
+
+    &__svg {
+        padding-left: 0.5rem;
+    }
+}
+
+#self {
+    align-items: flex-end;
+}
+
+#self > .messages-main__content {
+    background-color: $self-msg;
+}
+
+#self > .messages-main__meta {
+    align-items: flex-end;
+}
+
+#other {
+    align-content: flex-start;
+}
+
+#other > .messages-main__content {
+    background-color: $other-msg;
+}

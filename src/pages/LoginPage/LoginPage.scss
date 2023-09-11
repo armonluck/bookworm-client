@@ -1,3 +1,11 @@
 @use '../../styles/fonts' as *;
 @use '../../styles/mixins' as *;
 @use '../../styles/variables' as *;
+
+.login {
+    margin-top: 232px;
+    
+    @include tablet {
+        margin-top: 148px;
+    }
+}

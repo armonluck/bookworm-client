@@ -11,13 +11,11 @@
 
     &__text {
         color: $white;
-        font-size: 0.8rem;
-        font-weight: 700;
-        line-height: 1rem;
+        padding: 0 0.5rem;
+        @include typekit(labels-links-btns, mobile);
 
         @include tablet {
-            font-size: 1rem;
-            line-height: 18px;
+            @include typekit(labels-links-btns, tablet-desktop);
         }
     }
 }

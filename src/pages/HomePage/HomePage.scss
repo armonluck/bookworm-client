@@ -1,3 +1,20 @@
 @use '../../styles/fonts' as *;
 @use '../../styles/mixins' as *;
 @use '../../styles/variables' as *;
+
+.home {
+    margin-top: 232px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    
+    @include tablet {
+        margin-top: 148px;
+    }
+
+    &__header:hover {
+        transform:scale(0.9);
+    }
+}

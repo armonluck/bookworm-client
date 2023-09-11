@@ -1,32 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import BookCard from '../../components/BookCard/BookCard';
 import images from '../../components/Images/Images';
+import './BrowsePage.scss';
 
 function BrowsePage() {
 
     // URL and secret API key to access Google Book API search results
     const apiKey = process.env.REACT_APP_API_KEY;
     const testURL = "https://www.googleapis.com/books/v1/volumes?q=";
-    const pageLimit = "&maxResults=20";
+    const pageLimit = "&maxResults=21";
 
     // useState variables
     const [bookData, setBookData] = useState([]);
     const [search, setSearch] = useState("");
 
-    // // GET all data and set state
-    // useEffect(() => {
-    //     axios
-    //         .get("https://www.googleapis.com/books/v1/volumes?q=fantasy+subject:romance")
-    //         .then((response) => {
-    //             setBookData(response.data.items);
-    //         })
-    //         .catch((err) => console.log(err));
-    // }, [])
 
     // searchBook function
+    // controls what bookData is pulled from Google API
     const searchBook = (e) => {
-        if (e.key === "Enter") {
+        if (search !== "") {
             axios
                 .get(testURL + search + apiKey + pageLimit)
                 .then((response) => {
@@ -40,7 +33,7 @@ function BrowsePage() {
 
     const bookwormPhrases = {
         phrase1: "Worming Our Way Through Every Story",
-        phrase2: "Reading: The Ultimate Bookworm Workout",
+        phrase2: "Reading: The Ultimate Bookish Workout",
         phrase3: "Bookworms: Turning Pages, Not Turning Back!",
         phrase4: "In a World of Books, We're the Hungry Ones",
         phrase5: "Bookworms: Feasting on Knowledge Since Forever",
@@ -50,25 +43,28 @@ function BrowsePage() {
 
     return (
         <>
-            <div className='browse__header'>
-                <h1>{bookwormPhrases.phrase6}</h1>
+            <div className='browse'>
+                <h1 className='browse__title'>{bookwormPhrases.phrase2}</h1>
 
                 <div className='browse-search'>
-                    <label>Browse Books</label>
+                    <label className='browse-search__label'>Browse Books</label>
                     <input
                         className='browse-search__input'
                         type="text"
                         placeholder='Search by title, author, edition...'
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
-                        onKeyDown={searchBook}
+                        onKeyDown={(event) => {
+                            event.key === "Enter" && searchBook();
+                        }}
                     />
-                    <button>
-                        <img src={images.Search} alt="Search icon SVG" />
+                    <button className='browse-search__btn' onClick={searchBook}>
+                        <img className='browse-search__svg' src={images.Search} alt="Search icon SVG" />
                     </button>
                 </div>
             </div>
-            <div className='browse__results'>
+
+            <div className='browse-results'>
                 <BookCard bookData={bookData} />
             </div>
         </>

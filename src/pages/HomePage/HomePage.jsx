@@ -1,7 +1,12 @@
-import React from 'react'
+import React from 'react';
+import './HomePage.scss';
 
-export default function HomePage() {
+function HomePage() {
   return (
-    <div>HomePage</div>
+    <div className='home'>
+      <h1 className='home__header'>Welcome home bookworms!</h1>
+    </div>
   )
 }
+
+export default HomePage;
