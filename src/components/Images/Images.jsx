@@ -18,6 +18,7 @@ import Sort from '../../assets/icons/sort-24px.svg';
 import Star from '../../assets/icons/star-24px.svg';
 import Bookworm from '../../assets/logos/bookworm-logo.png';
 import BookwormTwo from '../../assets/logos/bookworm-logo-2.png';
+import GithubPNG from '../../assets/images/github-mark.png';
 
 const images = {
     Add,
@@ -39,7 +40,8 @@ const images = {
     Sort,
     Star,
     Bookworm, 
-    BookwormTwo
+    BookwormTwo,
+    GithubPNG
 }
 
 export default images;
