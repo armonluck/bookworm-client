@@ -3,7 +3,7 @@
 @use '../../styles/variables' as *;
 
 .bookcard-container {
-    width: 65%;
+    width: 60%;
     margin-top: 25px;
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(300px, 0.5fr));
@@ -45,12 +45,23 @@
         }
     }
 
-    &__author, &__pages {
+    &__author {
         padding: 0 0.5rem;
         @include typekit(body-small, mobile);
 
         @include tablet {
             @include typekit(body-small, tablet-desktop);
         }
+    }
+
+    &__pages {
+        padding: 0 0.5rem;
+        color: $bookworm-flame;
+        @include typekit(body-small, mobile);
+
+        @include tablet {
+            @include typekit(body-small, tablet-desktop);
+        }
+
     }
 }
