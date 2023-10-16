@@ -9,6 +9,7 @@ import MessagesPage from './pages/MessagesPage/MessagesPage';
 import AboutPage from './pages/AboutPage/AboutPage';
 import HomePage from './pages/HomePage/HomePage';
 import BrowsePage from './pages/BrowsePage/BrowsePage';
+import TestingPage from './pages/TestingPage/TestingPage';
 import './App.scss';
 
 // socket variable shows url for the backend server
@@ -25,7 +26,7 @@ function App() {
         <Route path='/browse' element={<BrowsePage />} />
         <Route path='/messages' element={<MessagesPage socket={socket} />} />
         <Route path='/about' element={<AboutPage />} />
-        <Route path='/contact' element='' />
+        <Route path='/testing' element={<TestingPage />} />
         <Route path='/login' element={<Login />} />
         <Route path='/profile' element='' />
       </Routes>
