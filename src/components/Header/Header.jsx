@@ -19,15 +19,15 @@ function Header() {
                         <li className="header-nav__list-item">
                             <NavLink to="/browse" className="header-nav__link">Browse Books</NavLink>
                         </li>
-                        <li className="header-nav__list-item">
+                        {/* <li className="header-nav__list-item">
                             <NavLink to="/testing" className="header-nav__link">Browse Testing</NavLink>
-                        </li>
+                        </li> */}
                         <li className="header-nav__list-item">
                             <NavLink to="/messages" className="header-nav__link">Message</NavLink>
                         </li>
-                        <li className="header-nav__list-item">
+                        {/* <li className="header-nav__list-item">
                             <NavLink to="/testing2" className="header-nav__link">Message Testing</NavLink>
-                        </li>
+                        </li> */}
                         <li className="header-nav__list-item">
                             <NavLink to="/about" className="header-nav__link">About</NavLink>
                         </li>
