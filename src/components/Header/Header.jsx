@@ -34,6 +34,9 @@ function Header() {
                         <li className="header-nav__list-item">
                             <NavLink to="/login" className="header-nav__link">Login</NavLink>
                         </li>
+                        <li className="header-nav__list-item">
+                            <NavLink to="/testing" className="header-nav__link">Testing</NavLink>
+                        </li>
                     </ul>
                 </nav>
             </div>

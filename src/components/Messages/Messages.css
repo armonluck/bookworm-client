@@ -1,0 +1,121 @@
+@font-face {
+  font-family: "Ysabeau Office";
+  src: url(../assets/fonts/YsabeauOffice-VariableFont_wght.ttf), url(../assets/fonts/YsabeauOffice-Thin.ttf) format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ysabeau Office";
+  src: url(../assets/fonts/YsabeauOffice-VariableFont_wght.ttf), url(../assets/fonts/YsabeauOffice-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ysabeau Office";
+  src: url(../assets/fonts/YsabeauOffice-VariableFont_wght.ttf), url(../assets/fonts/YsabeauOffice-Bold.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+.messages-container {
+  width: 350px;
+  height: 450px;
+  margin: 0.5rem;
+}
+
+.messages-header {
+  display: flex;
+  justify-content: center;
+  height: 45px;
+  background: #E68860;
+}
+.messages-header__title {
+  color: #FFFFFF;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 45px;
+}
+
+.messages-main {
+  height: 335px;
+  border: 1px solid #7D869C;
+  background: #FFFFFF;
+  position: relative;
+}
+.messages-main__container {
+  width: 100%;
+  height: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.messages-main__container::-webkit-scrollbar {
+  display: none;
+}
+.messages-main__content {
+  width: auto;
+  height: auto;
+  min-height: 40px;
+  max-width: 200px;
+  border-radius: 4px;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.messages-main__meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.messages-footer {
+  height: 45px;
+  border: 1px solid #7D869C;
+  display: flex;
+}
+.messages-footer__input {
+  height: 100%;
+  flex: 80%;
+  border: 0;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+.messages-footer__btn {
+  display: flex;
+  align-items: center;
+  flex: 20%;
+  height: 100%;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border: 0;
+  left: 0.2rem;
+}
+.messages-footer__btn:hover {
+  background: #FBCDCB;
+}
+.messages-footer__svg {
+  padding-left: 0.5rem;
+}
+
+#self {
+  align-items: flex-end;
+}
+
+#self > .messages-main__content {
+  background-color: #0095FF;
+}
+
+#self > .messages-main__meta {
+  align-items: flex-end;
+}
+
+#other {
+  align-content: flex-start;
+}
+
+#other > .messages-main__content {
+  background-color: #11A777;
+}/*# sourceMappingURL=Messages.css.map */

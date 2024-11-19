@@ -1,0 +1,85 @@
+@font-face {
+  font-family: "Ysabeau Office";
+  src: url(../assets/fonts/YsabeauOffice-VariableFont_wght.ttf), url(../assets/fonts/YsabeauOffice-Thin.ttf) format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ysabeau Office";
+  src: url(../assets/fonts/YsabeauOffice-VariableFont_wght.ttf), url(../assets/fonts/YsabeauOffice-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ysabeau Office";
+  src: url(../assets/fonts/YsabeauOffice-VariableFont_wght.ttf), url(../assets/fonts/YsabeauOffice-Bold.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+.bookcard-container {
+  width: 60%;
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 0.5fr));
+  grid-gap: 20px;
+}
+
+.bookcard {
+  width: 100%;
+  border-radius: 4px;
+  margin: 1rem;
+  box-shadow: 0 5px 5px rgba(179, 97, 30, 0.725);
+  transition: 0.5s;
+  display: flex;
+  align-items: center;
+}
+.bookcard__img {
+  min-height: 200px;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.bookcard:hover {
+  transform: scale(0.8);
+}
+
+.bookcard-data {
+  display: flex;
+  flex-direction: column;
+}
+.bookcard-data__title {
+  padding: 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  line-height: 1.625rem;
+}
+@media (min-width: 768px) {
+  .bookcard-data__title {
+    font-size: 1rem;
+    line-height: 1.75rem;
+  }
+}
+.bookcard-data__author {
+  padding: 0 0.5rem;
+  font-size: 0.6875rem;
+  line-height: 1rem;
+}
+@media (min-width: 768px) {
+  .bookcard-data__author {
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+  }
+}
+.bookcard-data__pages {
+  padding: 0 0.5rem;
+  color: #D45721;
+  font-size: 0.6875rem;
+  line-height: 1rem;
+}
+@media (min-width: 768px) {
+  .bookcard-data__pages {
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+  }
+}/*# sourceMappingURL=BookCard.css.map */

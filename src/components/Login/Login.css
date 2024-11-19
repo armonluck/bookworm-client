@@ -1,0 +1,87 @@
+@font-face {
+  font-family: "Ysabeau Office";
+  src: url(../assets/fonts/YsabeauOffice-VariableFont_wght.ttf), url(../assets/fonts/YsabeauOffice-Thin.ttf) format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ysabeau Office";
+  src: url(../assets/fonts/YsabeauOffice-VariableFont_wght.ttf), url(../assets/fonts/YsabeauOffice-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ysabeau Office";
+  src: url(../assets/fonts/YsabeauOffice-VariableFont_wght.ttf), url(../assets/fonts/YsabeauOffice-Bold.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+.login {
+  width: 100%;
+  height: 100%;
+  margin-top: 250px;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .login {
+    margin-top: 150px;
+  }
+}
+
+.login-header {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem;
+}
+.login-header__title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.login-header__text {
+  font-size: 1.5rem;
+}
+
+.login-form__fields {
+  margin: 0.5rem;
+}
+.login-form__input {
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  height: 36px;
+  min-width: 240px;
+  max-width: 100%;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #0C161D;
+  background-color: #FFFFFF;
+  border: 1px #7D869C solid;
+}
+@media (min-width: 768px) {
+  .login-form__input {
+    height: 40px;
+    padding: 1rem;
+  }
+}
+.login-form__btn-box {
+  display: flex;
+}
+@media (min-width: 768px) {
+  .login-form__btn-box {
+    border-top: 1px dividers solid;
+  }
+}
+.login-form__btns {
+  height: 40px;
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .login-form__btns {
+    margin: 0.5rem;
+    width: 150px;
+  }
+}/*# sourceMappingURL=Login.css.map */

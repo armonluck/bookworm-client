@@ -1,0 +1,104 @@
+@font-face {
+  font-family: "Ysabeau Office";
+  src: url(../assets/fonts/YsabeauOffice-VariableFont_wght.ttf), url(../assets/fonts/YsabeauOffice-Thin.ttf) format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ysabeau Office";
+  src: url(../assets/fonts/YsabeauOffice-VariableFont_wght.ttf), url(../assets/fonts/YsabeauOffice-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ysabeau Office";
+  src: url(../assets/fonts/YsabeauOffice-VariableFont_wght.ttf), url(../assets/fonts/YsabeauOffice-Bold.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+.browse {
+  margin-top: 232px;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(315deg, rgba(200, 196, 196, 0.2), rgba(46, 42, 42, 0.8)), url(../../assets/images/book-wall-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 2px 5px 2px rgba(19, 24, 44, 0.5);
+}
+@media (min-width: 768px) {
+  .browse {
+    margin-top: 140px;
+  }
+}
+.browse__title {
+  padding: 1rem;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+}
+@media (min-width: 768px) {
+  .browse__title {
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+}
+
+.browse-search {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.browse-search__label {
+  padding: 1rem;
+  color: #FFFFFF;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+@media (min-width: 768px) {
+  .browse-search__label {
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+.browse-search__input {
+  padding: 0.25rem;
+  min-width: 225px;
+  height: 36px;
+  border: 1px solid #7D869C;
+  color: #0C161D;
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+}
+@media (min-width: 768px) {
+  .browse-search__input {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+.browse-search__btn {
+  display: flex;
+  height: 36px;
+  color: #FFFFFF;
+  align-items: center;
+  border: 1px solid #7D869C;
+  background-color: #FFFFFF;
+}
+.browse-search__btn:hover {
+  background: #FBCDCB;
+}
+.browse-search__svg {
+  padding: 0.5rem;
+}
+
+.browse-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}/*# sourceMappingURL=BrowsePage.css.map */

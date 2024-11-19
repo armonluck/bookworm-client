@@ -1,0 +1,52 @@
+@font-face {
+  font-family: "Ysabeau Office";
+  src: url(../assets/fonts/YsabeauOffice-VariableFont_wght.ttf), url(../assets/fonts/YsabeauOffice-Thin.ttf) format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ysabeau Office";
+  src: url(../assets/fonts/YsabeauOffice-VariableFont_wght.ttf), url(../assets/fonts/YsabeauOffice-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ysabeau Office";
+  src: url(../assets/fonts/YsabeauOffice-VariableFont_wght.ttf), url(../assets/fonts/YsabeauOffice-Bold.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+.chat-form {
+  margin-top: 232px;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+@media (min-width: 768px) {
+  .chat-form {
+    margin-top: 148px;
+  }
+}
+.chat-form__subtitle {
+  font-size: 1.5rem;
+}
+.chat-form__input {
+  border: 1px solid #7D869C;
+  border-radius: 4px;
+  width: 200px;
+  height: 40px;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+.chat-form__btn {
+  background: #7D869C;
+  border-radius: 4px;
+  width: 200px;
+  height: 40px;
+  border: none;
+  font-size: 1rem;
+  color: #FFFFFF;
+}
+.chat-form__btn:hover {
+  background: #454E5D;
+}/*# sourceMappingURL=MessagesPage.css.map */
