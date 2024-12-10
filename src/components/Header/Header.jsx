@@ -8,7 +8,7 @@ function Header() {
             <div className='header__container'>
                 <div className="header-logo">
                     <Link to="/" className="header-logo__link">
-                        <img className="header-logo__img" src={images.BookwormTwo} alt="our logo" />
+                        <img className="header-logo__img" src={images.GithubPNG} alt="our logo" />
                     </Link>
                 </div>
                 <nav className="header-nav">
