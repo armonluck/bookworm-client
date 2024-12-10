@@ -61,6 +61,7 @@
             padding: 0;
             display: flex;
             justify-content: space-between;
+            align-items: center;
         }
 
         &__list-item {
@@ -74,7 +75,7 @@
 
         &__link {
             width: 100%;
-            padding: 0.5rem 0;
+            padding: 0.5rem;
             border-radius: 20px;
             color: $contrast-text;
             font-size: 0.8rem;

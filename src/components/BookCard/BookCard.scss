@@ -3,8 +3,7 @@
 @use '../../styles/variables' as *;
 
 .bookcard-container {
-    width: 60%;
-    margin-top: 25px;
+    width: 80%;
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(300px, 0.5fr));
     grid-gap:20px;
