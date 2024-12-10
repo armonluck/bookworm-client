@@ -35,6 +35,10 @@ function MessagesPage({ socket }) {
                     name="room"
                     onChange={(event) => {
                         setRoom(event.target.value);
+                    }}
+                // Call fx using "Enter" key or Btn click element below
+                    onKeyDown={(event) => {
+                        event.key === "Enter" && handleJoinRoom();
                     }} />
                 <br />
                 <button
