@@ -12,6 +12,7 @@ function MessagesPage({ socket }) {
     const handleJoinRoom = () => {
         if (username !== "" && room !== "") {
             socket.emit("join_room", room)
+            alert(`Hi ${username}, you have joined room ${room}`)
         }
     };
 
